@@ -363,7 +363,7 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                           width: 20,
                         ),
                         Container(
-                          width: 50,
+                          width: 53,
                           child: const Text(
                             "Content:",
                           ),
@@ -375,6 +375,7 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                             color: Colors.grey[300],
                           ),
                           width: MediaQuery.of(context).size.width * 0.50,
+                          height: 200,
                           child: const TextField(
                             decoration: InputDecoration(
                               border: InputBorder.none,
