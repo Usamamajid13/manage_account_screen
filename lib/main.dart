@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Manage Account',
       initialRoute: bottomNavigationBarScreenRoute,
-
       routes: {
         splashRoute: (context) => const SplashScreen(),
-        bottomNavigationBarScreenRoute: (context) => const BottomNavigationBarScreen(),
+        bottomNavigationBarScreenRoute: (context) =>
+            const BottomNavigationBarScreen(),
         manageProfileScreenRoute: (context) => const ManageProfileScreen(),
       },
     );

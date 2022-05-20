@@ -77,7 +77,7 @@ class AppUtils {
     );
   }
 
-  clientListWidget({context, image, text,onTap}) {
+  clientListWidget({context, image, text, onTap}) {
     return Container(
       margin: const EdgeInsets.symmetric(
         horizontal: 10,
@@ -156,7 +156,11 @@ class AppUtils {
                   7,
                 ),
               ),
-              child: Center(child: Text("Send Email",style: mediumTextStyle(color: Colors.white),)),
+              child: Center(
+                  child: Text(
+                "Send Email",
+                style: mediumTextStyle(color: Colors.white),
+              )),
             ),
           ),
         ],
@@ -164,8 +168,8 @@ class AppUtils {
     );
   }
 
-  emailListWidget({context,name,email,time}){
-    return  SizedBox(
+  emailListWidget({context, name, email, time}) {
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: 30,
       child: Row(
@@ -191,7 +195,8 @@ class AppUtils {
                   email,
                   style: mediumTextStyle(
                     color: maroonColor,
-                  ),overflow: TextOverflow.ellipsis,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),

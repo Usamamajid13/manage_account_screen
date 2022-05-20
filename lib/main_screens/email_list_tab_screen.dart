@@ -10,7 +10,7 @@ class EmailListTabScreen extends StatefulWidget {
   State<EmailListTabScreen> createState() => _EmailListTabScreenState();
 }
 
-class _EmailListTabScreenState extends State<EmailListTabScreen>  {
+class _EmailListTabScreenState extends State<EmailListTabScreen> {
   var utils = AppUtils();
 
   @override
@@ -201,8 +201,16 @@ class _EmailListTabScreenState extends State<EmailListTabScreen>  {
                   const SizedBox(
                     height: 10,
                   ),
-                  utils.emailListWidget(name: "AAA",context: context,email: "usa**@gmail.com",time: "12:00 AM"),
-                  utils.emailListWidget(name: "AAA",context: context,email: "usa**@gmail.com",time: "12:00 AM"),
+                  utils.emailListWidget(
+                      name: "AAA",
+                      context: context,
+                      email: "usa**@gmail.com",
+                      time: "12:00 AM"),
+                  utils.emailListWidget(
+                      name: "AAA",
+                      context: context,
+                      email: "usa**@gmail.com",
+                      time: "12:00 AM"),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -14,7 +14,6 @@ class BottomNavigationBarScreen extends StatefulWidget {
 }
 
 class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +33,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     );
   }
 }
+
 Widget menu(context) {
   return TabBar(
     indicatorColor: yellowColor,
@@ -45,8 +45,8 @@ Widget menu(context) {
     ),
     tabs: [
       const Text(
-          "Booking",
-        ),
+        "Booking",
+      ),
       Container(
         margin: const EdgeInsets.only(bottom: 10),
         child: const Text(

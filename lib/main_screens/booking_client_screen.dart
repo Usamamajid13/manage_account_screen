@@ -412,7 +412,7 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                             scale: 26,
                           ),
                           GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Navigator.pop(context);
                             },
                             child: Container(
@@ -428,18 +428,29 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Text("Send",style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),),
-                                  const SizedBox(width: 5,),
+                                  const Text(
+                                    "Send",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
                                   Container(
                                     width: 1.5,
-                                      height: 20,
+                                    height: 20,
                                     color: Colors.white,
                                   ),
-                                  const SizedBox(width: 5,),
-                                  const Icon(Icons.keyboard_arrow_down_sharp,color: Colors.white,size: 20,)
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
+                                  const Icon(
+                                    Icons.keyboard_arrow_down_sharp,
+                                    color: Colors.white,
+                                    size: 20,
+                                  )
                                 ],
                               ),
                             ),

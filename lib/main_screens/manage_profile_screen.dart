@@ -23,7 +23,7 @@ class _ManageProfileScreenState extends State<ManageProfileScreen> {
                 height: 50,
               ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.pop(context);
                 },
                 child: const Icon(

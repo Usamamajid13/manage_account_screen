@@ -248,9 +248,7 @@ class _BookingTabScreenState extends State<BookingTabScreen> {
                         width: 15,
                         height: 15,
                         decoration: const BoxDecoration(
-                          color: orangeColor,
-                          shape: BoxShape.circle
-                        ),
+                            color: orangeColor, shape: BoxShape.circle),
                         child: const Icon(
                           Icons.keyboard_arrow_down_sharp,
                           size: 10,
