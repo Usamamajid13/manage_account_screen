@@ -267,124 +267,187 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25)),
               child: SizedBox(
-                height: 420,
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      height: 30,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: lighOrangeColor,
+                height: 450,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
                       ),
-                      child: const Center(
-                        child: Text(
-                          "Wed 10:23 AM",
-                          style: TextStyle(color: orangeColor, fontSize: 12),
+                      Container(
+                        height: 30,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: lighOrangeColor,
+                        ),
+                        child: const Center(
+                          child: Text(
+                            "Wed 10:23 AM",
+                            style: TextStyle(color: orangeColor, fontSize: 12),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Container(
-                          width: 50,
-                          child: const Text(
-                            "To:",
-                            textAlign: TextAlign.right,
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            width: 20,
                           ),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.grey[300],
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.50,
-                          child: const TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
+                          const SizedBox(
+                            width: 50,
+                            child: Text(
+                              "To:",
+                              textAlign: TextAlign.right,
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Container(
-                          width: 50,
-                          child: const Text(
-                            "Subject:",
+                          const SizedBox(
+                            width: 5,
                           ),
-                        ),
-                        SizedBox(width: 5,),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.grey[300],
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(7),
+                              color: Colors.grey[300],
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.50,
+                            child: const TextField(
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            width: 20,
                           ),
-                          width: MediaQuery.of(context).size.width * 0.50,
-                          child: const TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
+                          const SizedBox(
+                            width: 50,
+                            child: Text(
+                              "Subject:",
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Container(
-                          width: 53,
-                          child: const Text(
-                            "Content:",
+                          const SizedBox(
+                            width: 5,
                           ),
-                        ),
-                        SizedBox(width: 5,),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.grey[300],
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(7),
+                              color: Colors.grey[300],
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.50,
+                            child: const TextField(
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            width: 20,
                           ),
-                          width: MediaQuery.of(context).size.width * 0.50,
-                          height: 200,
-                          child: const TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
+                          const SizedBox(
+                            width: 53,
+                            child: Text(
+                              "Content:",
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                  ],
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(7),
+                              color: Colors.grey[300],
+                            ),
+                            width: MediaQuery.of(context).size.width * 0.50,
+                            height: 150,
+                            child: const TextField(
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            width: 70,
+                          ),
+                          Image.asset(
+                            "assets/camera.png",
+                            scale: 26,
+                          ),
+                          Image.asset(
+                            "assets/image-gallery.png",
+                            scale: 26,
+                          ),
+                          Image.asset(
+                            "assets/happiness.png",
+                            scale: 26,
+                          ),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: seaGreenColor,
+                                borderRadius: BorderRadius.circular(
+                                  5,
+                                ),
+                              ),
+                              width: 100,
+                              height: 40,
+                              margin: EdgeInsets.only(right: 20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("Send",style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                  ),),
+                                  SizedBox(width: 5,),
+                                  Container(
+                                    width: 1.5,
+                                      height: 20,
+                                    color: Colors.white,
+                                  ),
+                                  SizedBox(width: 5,),
+                                  Icon(Icons.keyboard_arrow_down_sharp,color: Colors.white,size: 20,)
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             );
