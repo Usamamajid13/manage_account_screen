@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
+import 'booking_client_screen.dart';
 import 'booking_tab_screen.dart';
+import 'email_list_tab_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   const BottomNavigationBarScreen({Key? key}) : super(key: key);
@@ -15,16 +17,16 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
+    return Scaffold(
+      body: DefaultTabController(
         length: 4,
         child: Scaffold(
             bottomNavigationBar: menu(context),
             body: const TabBarView(
               children: [
                 BookingTabScreen(),
-                Icon(Icons.directions_transit),
-                Icon(Icons.directions_bike),
+                BookingClientScreen(),
+                EmailListTabScreen(),
                 Icon(null),
               ],
             )),

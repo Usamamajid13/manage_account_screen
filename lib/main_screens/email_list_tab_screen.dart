@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:manage_account_screen/App_utils.dart';
-import 'package:manage_account_screen/constants.dart';
 
-class BookingTabScreen extends StatefulWidget {
-  const BookingTabScreen({Key? key}) : super(key: key);
+import '../App_utils.dart';
+import '../constants.dart';
+
+class EmailListTabScreen extends StatefulWidget {
+  const EmailListTabScreen({Key? key}) : super(key: key);
 
   @override
-  State<BookingTabScreen> createState() => _BookingTabScreenState();
+  State<EmailListTabScreen> createState() => _EmailListTabScreenState();
 }
 
-class _BookingTabScreenState extends State<BookingTabScreen> {
+class _EmailListTabScreenState extends State<EmailListTabScreen>  {
   var utils = AppUtils();
 
   @override
@@ -85,15 +86,31 @@ class _BookingTabScreenState extends State<BookingTabScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                             Text(
-                              "Total Booking",
-                              style: TextStyle(color: yellowColor),
+                              "Total Inbox",
+                              style: TextStyle(color: Colors.white),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
                               "4",
-                              style: TextStyle(color: yellowColor),
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              "Total Sent",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "4",
+                              style: TextStyle(color: Colors.white),
                             ),
                           ],
                         ),
@@ -102,22 +119,6 @@ class _BookingTabScreenState extends State<BookingTabScreen> {
                           children: const [
                             Text(
                               "Total Clients",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "4",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Total Staff",
                               style: TextStyle(color: Colors.white),
                             ),
                             SizedBox(
@@ -133,75 +134,48 @@ class _BookingTabScreenState extends State<BookingTabScreen> {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "Booking List",
-                          style: TextStyle(color: Colors.black, fontSize: 15),
-                        ),
                         Container(
-                          height: 45,
-                          padding: const EdgeInsets.all(10),
+                          height: 40,
                           decoration: BoxDecoration(
-                              color: orangeColor,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              Text(
-                                "Add New Client",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
+                              borderRadius: BorderRadius.circular(15),
+                              color: bluishGreyColor),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 5,
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.75,
+                          child: Center(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "Search clients name",
+                                hintStyle: utils.mediumTextStyle(
+                                  color: Colors.grey,
+                                ),
+                                prefixIcon: const Icon(
+                                  Icons.search,
+                                ),
                               ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Icon(
-                                Icons.add,
-                                color: Colors.white,
-                                size: 25,
-                              )
-                            ],
+                            ),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 60,
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    color: greyColor,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "No.",
-                          style: utils.smallTextStyle(),
-                        ),
-                        Text(
-                          "Client Name",
-                          style: utils.smallTextStyle(),
-                        ),
-                        Text(
-                          "Time of Booking",
-                          style: utils.smallTextStyle(),
-                        ),
-                        Text(
-                          "Status",
-                          style: utils.smallTextStyle(),
-                        ),
-                        Text(
-                          "Managment",
-                          style: utils.smallTextStyle(),
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: orangeColor,
+                          ),
+                          child: const Icon(
+                            Icons.search,
+                            color: Colors.white,
+                          ),
                         ),
                       ],
                     ),
@@ -209,34 +183,26 @@ class _BookingTabScreenState extends State<BookingTabScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  utils.bookingDetailsWidget(
-                      context: context,
-                      status: "Waiting",
-                      boxColor: orangeColor,
-                      clientName: "Jack Liam",
-                      number: "4",
-                      time: "04/05/2022 15:00"),
-                  utils.bookingDetailsWidget(
-                      context: context,
-                      status: "Confirmed",
-                      boxColor: yellowColor,
-                      clientName: "Oliver Mason",
-                      number: "3",
-                      time: "04/05/2022 16:30"),
-                  utils.bookingDetailsWidget(
-                      context: context,
-                      status: "Completed",
-                      boxColor: Colors.grey,
-                      clientName: "Harry Jim",
-                      number: "2",
-                      time: "04/05/2022 11:30"),
-                  utils.bookingDetailsWidget(
-                      context: context,
-                      status: "Completed",
-                      boxColor: Colors.grey,
-                      clientName: "Jack Liam",
-                      number: "1",
-                      time: "04/05/2022 11:00"),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 50,
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    color: greyColor,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Email List",
+                          style: utils.mediumTextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  utils.emailListWidget(name: "AAA",context: context,email: "usa**@gmail.com",time: "12:00 AM"),
+                  utils.emailListWidget(name: "AAA",context: context,email: "usa**@gmail.com",time: "12:00 AM"),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -247,11 +213,9 @@ class _BookingTabScreenState extends State<BookingTabScreen> {
                       Container(
                         width: 15,
                         height: 15,
-                        decoration: BoxDecoration(
-                          color: orangeColor,
-                          shape: BoxShape.circle
-                        ),
-                        child: Icon(
+                        decoration: const BoxDecoration(
+                            color: orangeColor, shape: BoxShape.circle),
+                        child: const Icon(
                           Icons.keyboard_arrow_down_sharp,
                           size: 10,
                           color: Colors.white,

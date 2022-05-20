@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../constants.dart';
 
 class ManageProfileScreen extends StatefulWidget {
@@ -23,9 +22,14 @@ class _ManageProfileScreenState extends State<ManageProfileScreen> {
               const SizedBox(
                 height: 50,
               ),
-              const Icon(
-                Icons.arrow_back,
-                size: 20,
+              GestureDetector(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: const Icon(
+                  Icons.arrow_back,
+                  size: 20,
+                ),
               ),
               const SizedBox(
                 height: 20,
