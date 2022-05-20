@@ -12,3 +12,4 @@ const bluishGreyColor = Color(0xffF0F5FC);
 const brownColor = Color(0xff492C16);
 const seaGreenColor = Color(0xff35A9A4);
 const maroonColor = Color(0xffC2A595);
+const lighOrangeColor = Color(0xffFED8B2);

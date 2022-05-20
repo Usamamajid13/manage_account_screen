@@ -77,7 +77,7 @@ class AppUtils {
     );
   }
 
-  clientListWidget({context, image, text}) {
+  clientListWidget({context, image, text,onTap}) {
     return Container(
       margin: const EdgeInsets.symmetric(
         horizontal: 10,
@@ -145,16 +145,19 @@ class AppUtils {
           const SizedBox(
             width: 10,
           ),
-          Container(
-            width: 100,
-            height: 30,
-            decoration: BoxDecoration(
-              color: seaGreenColor,
-              borderRadius: BorderRadius.circular(
-                7,
+          GestureDetector(
+            onTap: onTap,
+            child: Container(
+              width: 100,
+              height: 30,
+              decoration: BoxDecoration(
+                color: seaGreenColor,
+                borderRadius: BorderRadius.circular(
+                  7,
+                ),
               ),
+              child: Center(child: Text("Send Email",style: mediumTextStyle(color: Colors.white),)),
             ),
-            child: Center(child: Text("Send Email",style: mediumTextStyle(color: Colors.white),)),
           ),
         ],
       ),

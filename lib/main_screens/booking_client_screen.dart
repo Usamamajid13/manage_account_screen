@@ -202,26 +202,32 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                     height: 10,
                   ),
                   utils.clientListWidget(
-                    context: context,
-                    image: const AssetImage(
-                      "assets/dummy-profile.png",
-                    ),
-                    text: "AAA",
-                  ),
+                      context: context,
+                      image: const AssetImage(
+                        "assets/dummy-profile.png",
+                      ),
+                      text: "AAA",
+                      onTap: () {
+                        sendEmailDialog(context);
+                      }),
                   utils.clientListWidget(
-                    context: context,
-                    image: const AssetImage(
-                      "assets/dummy-profile.png",
-                    ),
-                    text: "Loren Spears",
-                  ),
+                      context: context,
+                      image: const AssetImage(
+                        "assets/dummy-profile.png",
+                      ),
+                      text: "Loren Spears",
+                      onTap: () {
+                        sendEmailDialog(context);
+                      }),
                   utils.clientListWidget(
-                    context: context,
-                    image: const AssetImage(
-                      "assets/dummy-profile.png",
-                    ),
-                    text: "James Mila",
-                  ),
+                      context: context,
+                      image: const AssetImage(
+                        "assets/dummy-profile.png",
+                      ),
+                      text: "James Mila",
+                      onTap: () {
+                        sendEmailDialog(context);
+                      }),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -248,6 +254,142 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  sendEmailDialog(context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (BuildContext context, setState) {
+            return Dialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25)),
+              child: SizedBox(
+                height: 420,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 30,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: lighOrangeColor,
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Wed 10:23 AM",
+                          style: TextStyle(color: orangeColor, fontSize: 12),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          width: 50,
+                          child: const Text(
+                            "To:",
+                            textAlign: TextAlign.right,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.grey[300],
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.50,
+                          child: const TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          width: 50,
+                          child: const Text(
+                            "Subject:",
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.grey[300],
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.50,
+                          child: const TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          width: 50,
+                          child: const Text(
+                            "Content:",
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.grey[300],
+                          ),
+                          width: MediaQuery.of(context).size.width * 0.50,
+                          child: const TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }
