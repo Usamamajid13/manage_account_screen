@@ -424,22 +424,22 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                               ),
                               width: 100,
                               height: 40,
-                              margin: EdgeInsets.only(right: 20),
+                              margin: const EdgeInsets.only(right: 20),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("Send",style: TextStyle(
+                                  const Text("Send",style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
                                   ),),
-                                  SizedBox(width: 5,),
+                                  const SizedBox(width: 5,),
                                   Container(
                                     width: 1.5,
                                       height: 20,
                                     color: Colors.white,
                                   ),
-                                  SizedBox(width: 5,),
-                                  Icon(Icons.keyboard_arrow_down_sharp,color: Colors.white,size: 20,)
+                                  const SizedBox(width: 5,),
+                                  const Icon(Icons.keyboard_arrow_down_sharp,color: Colors.white,size: 20,)
                                 ],
                               ),
                             ),

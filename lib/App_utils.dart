@@ -112,7 +112,7 @@ class AppUtils {
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           const Icon(
             Icons.delete,
             color: Colors.grey,
@@ -165,13 +165,13 @@ class AppUtils {
   }
 
   emailListWidget({context,name,email,time}){
-    return  Container(
+    return  SizedBox(
       width: MediaQuery.of(context).size.width,
       height: 30,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width * 0.2,
             child: Center(
               child: Text(
@@ -182,7 +182,7 @@ class AppUtils {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width * 0.5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -196,7 +196,7 @@ class AppUtils {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width * 0.2,
             child: Center(
               child: Text(
