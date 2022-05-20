@@ -37,7 +37,7 @@ Widget menu(context) {
     indicatorColor: yellowColor,
     labelColor: yellowColor,
     unselectedLabelColor: Colors.grey,
-    indicator: UnderlineTabIndicator(
+    indicator: const UnderlineTabIndicator(
       borderSide: BorderSide(color: yellowColor, width: 2.0),
       insets: EdgeInsets.fromLTRB(80.0, 0.0, 90.0, 40.0),
     ),
