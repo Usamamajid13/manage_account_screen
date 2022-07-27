@@ -474,13 +474,31 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
               const SizedBox(
                 height: 10,
               ),
-              utils.bigButton(
-                  containerColor: orangeColor,
-                  text: "Add",
-                  width: MediaQuery.of(context).size.width * 0.3,
-                  textColor: Colors.white,
-                  borderRadius: 7.0,
-                  shadowColors: Colors.white)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  utils.bigButton(
+                      containerColor: orangeColor,
+                      text: "Invitation",
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      width: MediaQuery.of(context).size.width * 0.3,
+                      textColor: Colors.white,
+                      borderRadius: 7.0,
+                      shadowColors: Colors.white),
+                  utils.bigButton(
+                      containerColor: orangeColor,
+                      text: "Edited",
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      width: MediaQuery.of(context).size.width * 0.3,
+                      textColor: Colors.white,
+                      borderRadius: 7.0,
+                      shadowColors: Colors.white),
+                ],
+              )
             ],
           ),
         ),
