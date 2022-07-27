@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   splashNavigator() {
     Timer(const Duration(seconds: 5), () {
-      Navigator.pushNamed(context, bottomNavigationBarScreenRoute);
+      Navigator.pushNamed(context, signInScreenRoute);
     });
   }
 }

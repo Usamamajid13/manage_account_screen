@@ -353,7 +353,7 @@ class _ManageProfileScreenState extends State<ManageProfileScreen> {
               Align(
                 alignment: Alignment.centerRight,
                 child: SizedBox(
-                  width: 180,
+                  width: 190,
                   child: Column(
                     children: [
                       const Align(
@@ -420,7 +420,7 @@ class _ManageProfileScreenState extends State<ManageProfileScreen> {
                       ),
                     ),
                     SizedBox(
-                      width: 120,
+                      width: 130,
                       child: Column(
                         children: [
                           const Text(

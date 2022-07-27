@@ -299,7 +299,7 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                             width: 20,
                           ),
                           const SizedBox(
-                            width: 50,
+                            width: 60,
                             child: Text(
                               "To:",
                               textAlign: TextAlign.right,
@@ -333,7 +333,7 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                             width: 20,
                           ),
                           const SizedBox(
-                            width: 50,
+                            width: 60,
                             child: Text(
                               "Subject:",
                             ),
@@ -366,7 +366,7 @@ class _BookingClientScreenState extends State<BookingClientScreen> {
                             width: 20,
                           ),
                           const SizedBox(
-                            width: 53,
+                            width: 60,
                             child: Text(
                               "Content:",
                             ),

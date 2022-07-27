@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:manage_account_screen/main_screens/profile_tab_screen.dart';
 
 import '../constants.dart';
 import 'booking_client_screen.dart';
@@ -26,7 +27,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
                 BookingTabScreen(),
                 BookingClientScreen(),
                 EmailListTabScreen(),
-                Icon(null),
+                ProfileTabScreen(),
               ],
             )),
       ),
@@ -35,36 +36,42 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 }
 
 Widget menu(context) {
-  return TabBar(
-    indicatorColor: yellowColor,
-    labelColor: yellowColor,
-    unselectedLabelColor: Colors.grey,
-    indicator: const UnderlineTabIndicator(
-      borderSide: BorderSide(color: yellowColor, width: 2.0),
-      insets: EdgeInsets.fromLTRB(80.0, 0.0, 90.0, 40.0),
-    ),
-    tabs: [
-      const Text(
-        "Booking",
+  return Container(
+    height: 50,
+    child: TabBar(
+      indicatorColor: yellowColor,
+      labelColor: yellowColor,
+      unselectedLabelColor: Colors.grey,
+      indicator: const UnderlineTabIndicator(
+        borderSide: BorderSide(color: yellowColor, width: 2.0),
+        insets: EdgeInsets.fromLTRB(80.0, 0.0, 90.0, 50.0),
       ),
-      Container(
-        margin: const EdgeInsets.only(bottom: 10),
-        child: const Text(
-          "Clients",
-        ),
-      ),
-      Container(
-        margin: const EdgeInsets.only(bottom: 10),
-        child: const Text(
-          "Email List",
-          style: TextStyle(fontSize: 13),
-        ),
-      ),
-      Container(
+      tabs: [
+        Container(
           margin: const EdgeInsets.only(bottom: 10),
-          child: const Icon(
-            Icons.person,
-          )),
-    ],
+          child: const Text(
+            "Bookings",
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(bottom: 10),
+          child: const Text(
+            "Clients",
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(bottom: 10),
+          child: const Text(
+            "Email List",
+            style: TextStyle(fontSize: 13),
+          ),
+        ),
+        Container(
+            margin: const EdgeInsets.only(bottom: 10),
+            child: const Icon(
+              Icons.person,
+            )),
+      ],
+    ),
   );
 }

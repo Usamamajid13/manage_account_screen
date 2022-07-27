@@ -20,6 +20,22 @@ class AppUtils {
     );
   }
 
+  extraLargeTextStyle({color}) {
+    return TextStyle(
+      color: color,
+      fontSize: 26,
+      fontWeight: FontWeight.normal,
+    );
+  }
+
+  largeTextStyle({color}) {
+    return TextStyle(
+      color: color,
+      fontSize: 18,
+      fontWeight: FontWeight.normal,
+    );
+  }
+
   bookingDetailsWidget({context, number, clientName, time, status, boxColor}) {
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -64,6 +80,62 @@ class AppUtils {
               ),
               const SizedBox(
                 width: 5,
+              ),
+              const Icon(
+                Icons.delete,
+                color: Colors.grey,
+                size: 20,
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  bookingDetailsProfileWidget(
+      {context, number, clientName, time, status, boxColor}) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      color: Colors.grey.withOpacity(0.1),
+      height: 60,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.only(left: 5, right: 5, bottom: 2),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            number,
+            style: smallTextStyle(),
+          ),
+          Text(
+            clientName,
+            style: smallTextStyle(),
+          ),
+          Text(
+            time,
+            style: smallTextStyle(),
+          ),
+          Text(
+            status,
+            style: smallTextStyle(),
+          ),
+          Row(
+            children: [
+              Text(
+                "Edit",
+                style: smallTextStyle(color: greenColor),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 25,
+                width: 1.3,
+                color: Colors.grey,
+              ),
+              const SizedBox(
+                width: 10,
               ),
               const Icon(
                 Icons.delete,
@@ -213,6 +285,89 @@ class AppUtils {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  textFieldWithIcon(
+      {context, color, isObscure, hintText, prefixIcon, suffixIcon}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      width: MediaQuery.of(context).size.width * 0.9,
+      height: 60,
+      child: Center(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: TextFormField(
+                obscureText: isObscure,
+                decoration: InputDecoration(
+                  hintText: hintText,
+                  // suffixIcon: suffixIcon,
+                  prefixIcon: prefixIcon,
+                  hintStyle: mediumTextStyle(),
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              child: suffixIcon,
+              padding: EdgeInsets.only(right: 20),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  bigButton(
+      {width,
+      height,
+      borderColor,
+      onTap,
+      borderWidth,
+      borderRadius,
+      containerColor,
+      text,
+      shadowColors,
+      textColor,
+      fontSize,
+      fontWeight}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          border: Border.all(
+              color: borderColor ?? Colors.transparent,
+              width: borderWidth == null ? 2 : borderWidth.toDouble()),
+          borderRadius: BorderRadius.circular(borderRadius ?? 0),
+          color: containerColor ?? Colors.white,
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(0, 0),
+              color: shadowColors ?? Colors.black.withOpacity(0.2),
+              blurRadius: 4,
+            )
+          ],
+        ),
+        child: Center(
+          child: Text(
+            text.toString(),
+            style: TextStyle(
+              color: textColor ?? Colors.black,
+              fontSize: fontSize == null ? 13.0 : fontSize.toDouble(),
+              fontWeight: fontWeight ?? FontWeight.bold,
+              fontFamily: "ProximaNova",
+            ),
+          ),
+        ),
       ),
     );
   }
