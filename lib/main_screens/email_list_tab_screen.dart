@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../App_utils.dart';
+import '../app_utils.dart';
 import '../constants.dart';
 
 class EmailListTabScreen extends StatefulWidget {

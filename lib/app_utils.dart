@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
 import 'constants.dart';
+import 'package:flutter/material.dart';
 
 class AppUtils {
   smallTextStyle({color}) {
@@ -290,14 +288,21 @@ class AppUtils {
   }
 
   textFieldWithIcon(
-      {context, color, isObscure, hintText, prefixIcon, suffixIcon}) {
+      {context,
+      color,
+      isObscure,
+      hintText,
+      prefixIcon,
+      suffixIcon,
+      radius,
+      height}) {
     return Container(
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(radius ?? 12),
       ),
       width: MediaQuery.of(context).size.width * 0.9,
-      height: 60,
+      height: height ?? 60,
       child: Center(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -306,8 +311,8 @@ class AppUtils {
               child: TextFormField(
                 obscureText: isObscure,
                 decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.all(15),
                   hintText: hintText,
-                  // suffixIcon: suffixIcon,
                   prefixIcon: prefixIcon,
                   hintStyle: mediumTextStyle(),
                   border: InputBorder.none,
@@ -316,7 +321,7 @@ class AppUtils {
             ),
             Container(
               child: suffixIcon,
-              padding: EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 20),
             ),
           ],
         ),

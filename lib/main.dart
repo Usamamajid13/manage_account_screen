@@ -4,6 +4,7 @@ import 'package:manage_account_screen/main_screens/manage_profile_screen.dart';
 
 import 'Authentication/sign_in_screen.dart';
 import 'constants.dart';
+import 'main_screens/add_client_screen.dart';
 import 'main_screens/bottom_navigation_bar_screen.dart';
 import 'Authentication/splash_screen.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Manage Account',
-      initialRoute: bottomNavigationBarScreenRoute,
+      initialRoute: splashRoute,
       routes: {
         splashRoute: (context) => const SplashScreen(),
         bottomNavigationBarScreenRoute: (context) =>
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         manageProfileScreenRoute: (context) => const ManageProfileScreen(),
         signInScreenRoute: (context) => const SignInScreenRoute(),
         signUpScreenRoute: (context) => const SignUpScreen(),
+        addClientScreenRoute: (context) => const AddClientScreen(),
       },
     );
   }

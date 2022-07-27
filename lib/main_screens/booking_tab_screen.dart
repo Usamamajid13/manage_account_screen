@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manage_account_screen/App_utils.dart';
+import 'package:manage_account_screen/app_utils.dart';
 import 'package:manage_account_screen/constants.dart';
 
 class BookingTabScreen extends StatefulWidget {
@@ -144,29 +144,34 @@ class _BookingTabScreenState extends State<BookingTabScreen> {
                           "Booking List",
                           style: TextStyle(color: Colors.black, fontSize: 15),
                         ),
-                        Container(
-                          height: 45,
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: orangeColor,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              Text(
-                                "Add New Client",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Icon(
-                                Icons.add,
-                                color: Colors.white,
-                                size: 25,
-                              )
-                            ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, addClientScreenRoute);
+                          },
+                          child: Container(
+                            height: 45,
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: orangeColor,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: const [
+                                Text(
+                                  "Add New Client",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                  size: 25,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ],

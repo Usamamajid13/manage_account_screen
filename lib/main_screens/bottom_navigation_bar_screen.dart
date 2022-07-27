@@ -36,7 +36,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 }
 
 Widget menu(context) {
-  return Container(
+  return SizedBox(
     height: 50,
     child: TabBar(
       indicatorColor: yellowColor,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:manage_account_screen/constants.dart';
+import 'package:table_calendar/table_calendar.dart';
 
-import '../App_utils.dart';
+import '../app_utils.dart';
 
 class ProfileTabScreen extends StatefulWidget {
   const ProfileTabScreen({Key? key}) : super(key: key);
@@ -11,6 +12,8 @@ class ProfileTabScreen extends StatefulWidget {
 }
 
 class _ProfileTabScreenState extends State<ProfileTabScreen> {
+  bool selected1 = false;
+  bool selected2 = false;
   var utils = AppUtils();
 
   @override
@@ -100,7 +103,7 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
                       Expanded(
                         child: Container(
                           height: 100,
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           margin: const EdgeInsets.only(right: 20, left: 10),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -127,32 +130,37 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
                           "Staff List",
                           style: TextStyle(color: Colors.black, fontSize: 15),
                         ),
-                        Container(
-                          height: 35,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 15, vertical: 10),
-                          decoration: BoxDecoration(
-                              color: orangeColor,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text(
-                                "Add New Staff",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Icon(
-                                Icons.add,
-                                color: Colors.white,
-                                size: 20,
-                              )
-                            ],
+                        GestureDetector(
+                          onTap: () {
+                            addClientsDialog(MediaQuery.of(context).size.width);
+                          },
+                          child: Container(
+                            height: 35,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 10),
+                            decoration: BoxDecoration(
+                                color: orangeColor,
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  "Add New Staff",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                  size: 20,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -206,7 +214,7 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
                       clientName: "Jim Cook",
                       number: "3",
                       time: "04/05/2022"),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -237,4 +245,336 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
       ),
     );
   }
+
+  addClientsDialog(width) {
+    showGeneralDialog(
+      context: context,
+      barrierLabel: 'Dialog',
+      transitionDuration: const Duration(milliseconds: 20),
+      pageBuilder: (_, __, ___) {
+        return Scaffold(
+          backgroundColor: Colors.white60.withOpacity(0.3),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    height: width > 400
+                        ? MediaQuery.of(context).size.width * 0.42
+                        : MediaQuery.of(context).size.width * 0.32,
+                    width: double.infinity,
+                    color: Colors.transparent,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: width * 0.8,
+                          height: 570,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 15, right: 15),
+                            child: Column(
+                              children: [
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "Staff Name",
+                                    style: utils.mediumTextStyle(),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                utils.textFieldWithIcon(
+                                  context: context,
+                                  isObscure: false,
+                                  color: Colors.grey[200],
+                                  radius: 30.0,
+                                  height: 40.0,
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Start Date",
+                                      style: utils.mediumTextStyle(),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          _selectedDay1 == null
+                                              ? "Month"
+                                              : _selectedDay1!.month == 1
+                                                  ? "Jan ${_selectedDay1!.year}"
+                                                  : _selectedDay1!.month == 2
+                                                      ? "Feb ${_selectedDay1!.year}"
+                                                      : _selectedDay1!.month ==
+                                                              3
+                                                          ? "Mar ${_selectedDay1!.year}"
+                                                          : _selectedDay1!
+                                                                      .month ==
+                                                                  4
+                                                              ? "Apr ${_selectedDay1!.year}"
+                                                              : _selectedDay1!
+                                                                          .month ==
+                                                                      5
+                                                                  ? "May ${_selectedDay1!.year}"
+                                                                  : _selectedDay1!
+                                                                              .month ==
+                                                                          6
+                                                                      ? "June ${_selectedDay1!.year}"
+                                                                      : _selectedDay1!.month ==
+                                                                              7
+                                                                          ? "July ${_selectedDay1!.year}"
+                                                                          : _selectedDay1!.month == 8
+                                                                              ? "Aug ${_selectedDay1!.year}"
+                                                                              : _selectedDay1!.month == 9
+                                                                                  ? "Sep ${_selectedDay1!.year}"
+                                                                                  : _selectedDay1!.month == 10
+                                                                                      ? "Oct ${_selectedDay1!.year}"
+                                                                                      : _selectedDay1!.month == 11
+                                                                                          ? "Nov ${_selectedDay1!.year}"
+                                                                                          : "Dec ${_selectedDay1!.year}",
+                                          style: utils.mediumTextStyle(),
+                                        ),
+                                        const Icon(
+                                          Icons.arrow_forward_ios_rounded,
+                                          size: 15,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                SizedBox(
+                                  child: TableCalendar(
+                                    selectedDayPredicate: (day) {
+                                      return isSameDay(_selectedDay1, day);
+                                    },
+                                    onDaySelected: (selectedDay1, focusedDay1) {
+                                      setState(() {});
+
+                                      Navigator.pop(context, true);
+                                      _selectedDay1 = selectedDay1;
+                                      _focusedDay1 = focusedDay1;
+
+                                      print(selectedDay1);
+                                      print(_focusedDay1);
+                                      addClientsDialog(width);
+                                    },
+                                    calendarBuilders: CalendarBuilders(
+                                      selectedBuilder:
+                                          (context, date, events) => Container(
+                                              margin: const EdgeInsets.all(4.0),
+                                              alignment: Alignment.center,
+                                              decoration: BoxDecoration(
+                                                  color: yellowColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0)),
+                                              child: Text(
+                                                date.day.toString(),
+                                                style: const TextStyle(
+                                                    color: Colors.white),
+                                              )),
+                                      headerTitleBuilder: (context, date) =>
+                                          Container(
+                                              margin: const EdgeInsets.all(4.0),
+                                              alignment: Alignment.center,
+                                              decoration: BoxDecoration(
+                                                  color: yellowColor
+                                                      .withOpacity(0.5),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0)),
+                                              child: Text(
+                                                date.month.toString(),
+                                                style: const TextStyle(
+                                                    color: Colors.white),
+                                              )),
+                                      todayBuilder: (context, date, events) =>
+                                          Container(
+                                              margin: const EdgeInsets.all(4.0),
+                                              alignment: Alignment.center,
+                                              decoration: BoxDecoration(
+                                                  color: yellowColor
+                                                      .withOpacity(0.5),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0)),
+                                              child: Text(
+                                                date.day.toString(),
+                                                style: const TextStyle(
+                                                    color: Colors.white),
+                                              )),
+                                    ),
+                                    firstDay: DateTime.utc(2010, 10, 16),
+                                    lastDay: DateTime.utc(2030, 3, 14),
+                                    focusedDay: _selectedDay1 ?? DateTime.now(),
+                                    headerVisible: false,
+                                    availableGestures:
+                                        AvailableGestures.horizontalSwipe,
+                                    startingDayOfWeek: StartingDayOfWeek.monday,
+                                    calendarStyle: const CalendarStyle(
+                                      todayDecoration:
+                                          BoxDecoration(color: Colors.orange),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Permission",
+                                      style: utils.mediumTextStyle(),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        selected1 = true;
+                                        selected2 = false;
+                                        setState(() {});
+                                        Navigator.pop(context);
+                                        addClientsDialog(width);
+                                      },
+                                      child: Container(
+                                        width: 15,
+                                        height: 15,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                            )),
+                                        child: Center(
+                                          child: Container(
+                                            width: 7,
+                                            height: 7,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: selected1
+                                                    ? Colors.black
+                                                    : Colors.transparent,
+                                                border: Border.all(
+                                                  color: Colors.grey,
+                                                )),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      "High",
+                                      style: utils.mediumTextStyle(),
+                                    ),
+                                    const SizedBox(
+                                      width: 15,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        selected1 = false;
+                                        selected2 = true;
+                                        setState(() {});
+                                        Navigator.pop(context);
+                                        addClientsDialog(width);
+                                      },
+                                      child: Container(
+                                        width: 15,
+                                        height: 15,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                            )),
+                                        child: Center(
+                                          child: Container(
+                                            width: 7,
+                                            height: 7,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: selected2
+                                                    ? Colors.black
+                                                    : Colors.transparent,
+                                                border: Border.all(
+                                                  color: Colors.grey,
+                                                )),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      "Low",
+                                      style: utils.mediumTextStyle(),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                utils.bigButton(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    containerColor: yellowColor,
+                                    text: "Add Staff",
+                                    width: width * 0.3,
+                                    textColor: Colors.white,
+                                    borderRadius: 7.0,
+                                    shadowColors: Colors.white)
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.3,
+                    width: double.infinity,
+                    color: Colors.transparent,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  DateTime? _selectedDay1;
+  DateTime? _focusedDay1;
 }

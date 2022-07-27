@@ -5,6 +5,7 @@ const bottomNavigationBarScreenRoute = "/bottomNavigationBarScreenRoute";
 const manageProfileScreenRoute = "/manageProfileScreenRoute";
 const signUpScreenRoute = "/signUpScreenRoute";
 const signInScreenRoute = "/signInScreenRoute";
+const addClientScreenRoute = "/addClientScreenRoute";
 
 const yellowColor = Color(0xffFEBF23);
 const greyColor = Color(0xffA9ADC7);

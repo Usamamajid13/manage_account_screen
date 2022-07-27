@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manage_account_screen/App_utils.dart';
+import 'package:manage_account_screen/app_utils.dart';
 import 'package:manage_account_screen/constants.dart';
 
 class SignInScreenRoute extends StatefulWidget {
