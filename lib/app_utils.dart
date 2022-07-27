@@ -34,7 +34,8 @@ class AppUtils {
     );
   }
 
-  bookingDetailsWidget({context, number, clientName, time, status, boxColor}) {
+  bookingDetailsWidget(
+      {context, number, clientName, time, status, boxColor, onTap}) {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 60,
@@ -64,9 +65,12 @@ class AppUtils {
               )),
           Row(
             children: [
-              Text(
-                "Edit",
-                style: smallTextStyle(color: greenColor),
+              GestureDetector(
+                onTap: onTap,
+                child: Text(
+                  "Edit",
+                  style: smallTextStyle(color: greenColor),
+                ),
               ),
               const SizedBox(
                 width: 5,

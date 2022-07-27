@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:manage_account_screen/app_utils.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../App_utils.dart';
 import '../constants.dart';
 
-class AddClientScreen extends StatefulWidget {
-  const AddClientScreen({Key? key}) : super(key: key);
+class EditBookingScreen extends StatefulWidget {
+  const EditBookingScreen({Key? key}) : super(key: key);
 
   @override
-  State<AddClientScreen> createState() => _AddClientScreenState();
+  State<EditBookingScreen> createState() => _EditBookingScreenState();
 }
 
-class _AddClientScreenState extends State<AddClientScreen> {
+class _EditBookingScreenState extends State<EditBookingScreen> {
   bool selected1 = false;
   bool selected2 = false;
   bool selected3 = false;
   DateTime? _selectedDay1;
   DateTime? _focusedDay1;
+  int bigButton = -1;
   var utils = AppUtils();
   @override
   Widget build(BuildContext context) {
@@ -72,23 +73,121 @@ class _AddClientScreenState extends State<AddClientScreen> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "SMS Content:",
+                  "Status",
                   style: utils.mediumTextStyle(),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                height: 110,
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey.withOpacity(0.1)),
-                child: const Text(
-                  "Your account has been regitered for you, please click the Confirm button in the app to confirm your reservation. After confimation please clickthe Arrived* button to add you to the currentqueue it you arrive at the site.",
-                  style: TextStyle(color: Color(0xff999FBE), fontSize: 13),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      bigButton = 1;
+                      setState(() {});
+                    },
+                    child: Container(
+                      height: 90,
+                      width: 80,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                              color: bigButton == 1
+                                  ? Colors.black.withOpacity(0.6)
+                                  : Colors.transparent,
+                              width: 2),
+                          color: lighPurpleColor),
+                      child: Container(
+                        padding: EdgeInsets.only(top: 40),
+                        child: const Text(
+                          "Waiting",
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      bigButton = 2;
+                      setState(() {});
+                    },
+                    child: Container(
+                      height: 90,
+                      width: 80,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                              color: bigButton == 2
+                                  ? Colors.black.withOpacity(0.6)
+                                  : Colors.transparent,
+                              width: 2),
+                          color: lighBlueColor),
+                      child: Container(
+                        padding: EdgeInsets.only(top: 40),
+                        child: const Text(
+                          "Confirm",
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      bigButton = 3;
+                      setState(() {});
+                    },
+                    child: Container(
+                      height: 90,
+                      width: 80,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                              color: bigButton == 3
+                                  ? Colors.black.withOpacity(0.6)
+                                  : Colors.transparent,
+                              width: 2),
+                          color: lighGreenColor),
+                      child: Container(
+                        padding: EdgeInsets.only(top: 40),
+                        child: const Text(
+                          "Complete",
+                          style: TextStyle(color: Colors.white, fontSize: 12.2),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      bigButton = 4;
+                      setState(() {});
+                    },
+                    child: Container(
+                      height: 90,
+                      width: 80,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                              color: bigButton == 4
+                                  ? Colors.black.withOpacity(0.6)
+                                  : Colors.transparent,
+                              width: 2),
+                          color: lighBrownColor),
+                      child: Container(
+                        padding: EdgeInsets.only(top: 40),
+                        child: const Text(
+                          "Empty",
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 10,

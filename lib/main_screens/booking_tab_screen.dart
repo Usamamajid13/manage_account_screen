@@ -215,33 +215,38 @@ class _BookingTabScreenState extends State<BookingTabScreen> {
                     height: 20,
                   ),
                   utils.bookingDetailsWidget(
-                      context: context,
-                      status: "Waiting",
-                      boxColor: orangeColor,
-                      clientName: "Jack Liam",
-                      number: "4",
-                      time: "04/05/2022 15:00"),
+                    context: context,
+                    status: "Waiting",
+                    boxColor: orangeColor,
+                    clientName: "Jack Liam",
+                    number: "4",
+                    time: "04/05/2022 15:00",
+                    onTap: () {
+                      Navigator.pushNamed(context, editBookingScreenRoute);
+                    },
+                  ),
                   utils.bookingDetailsWidget(
-                      context: context,
-                      status: "Confirmed",
-                      boxColor: yellowColor,
-                      clientName: "Oliver Mason",
-                      number: "3",
-                      time: "04/05/2022 16:30"),
+                    context: context,
+                    status: "Completed",
+                    boxColor: Colors.grey,
+                    clientName: "Harry Jim",
+                    number: "2",
+                    time: "04/05/2022 11:30",
+                    onTap: () {
+                      Navigator.pushNamed(context, editBookingScreenRoute);
+                    },
+                  ),
                   utils.bookingDetailsWidget(
-                      context: context,
-                      status: "Completed",
-                      boxColor: Colors.grey,
-                      clientName: "Harry Jim",
-                      number: "2",
-                      time: "04/05/2022 11:30"),
-                  utils.bookingDetailsWidget(
-                      context: context,
-                      status: "Completed",
-                      boxColor: Colors.grey,
-                      clientName: "Jack Liam",
-                      number: "1",
-                      time: "04/05/2022 11:00"),
+                    context: context,
+                    status: "Completed",
+                    boxColor: Colors.grey,
+                    clientName: "Jack Liam",
+                    number: "1",
+                    time: "04/05/2022 11:00",
+                    onTap: () {
+                      Navigator.pushNamed(context, editBookingScreenRoute);
+                    },
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -7,6 +7,7 @@ import 'constants.dart';
 import 'main_screens/add_client_screen.dart';
 import 'main_screens/bottom_navigation_bar_screen.dart';
 import 'Authentication/splash_screen.dart';
+import 'main_screens/edit_booking_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         signInScreenRoute: (context) => const SignInScreenRoute(),
         signUpScreenRoute: (context) => const SignUpScreen(),
         addClientScreenRoute: (context) => const AddClientScreen(),
+        editBookingScreenRoute: (context) => const EditBookingScreen(),
       },
     );
   }
