@@ -376,10 +376,7 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
 
                                       Navigator.pop(context, true);
                                       _selectedDay1 = selectedDay1;
-                                      _focusedDay1 = focusedDay1;
 
-                                      print(selectedDay1);
-                                      print(_focusedDay1);
                                       addClientsDialog(width);
                                     },
                                     calendarBuilders: CalendarBuilders(
@@ -576,5 +573,4 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
   }
 
   DateTime? _selectedDay1;
-  DateTime? _focusedDay1;
 }

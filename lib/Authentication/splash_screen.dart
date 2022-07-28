@@ -21,8 +21,9 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
         body: Center(
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.9,
+        width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
+        child: Image.asset("assets/splashImageOCI.png"),
       ),
     ));
   }

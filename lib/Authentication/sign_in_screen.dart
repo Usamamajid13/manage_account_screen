@@ -31,8 +31,17 @@ class _SignInScreenRouteState extends State<SignInScreenRoute> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 300,
-              color: Colors.red,
+              height: 1,
+              color: Colors.grey,
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Image.asset("assets/loginImageOCI.png"),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 1,
+              color: Colors.grey,
             ),
             const SizedBox(
               height: 30,

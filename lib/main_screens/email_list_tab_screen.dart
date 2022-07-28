@@ -205,11 +205,17 @@ class _EmailListTabScreenState extends State<EmailListTabScreen> {
                       name: "AAA",
                       context: context,
                       email: "usa**@gmail.com",
+                      onTap: () {
+                        emailListDialog(MediaQuery.of(context).size.width);
+                      },
                       time: "12:00 AM"),
                   utils.emailListWidget(
                       name: "AAA",
                       context: context,
                       email: "usa**@gmail.com",
+                      onTap: () {
+                        emailListDialog(MediaQuery.of(context).size.width);
+                      },
                       time: "12:00 AM"),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -237,6 +243,256 @@ class _EmailListTabScreenState extends State<EmailListTabScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  emailListDialog(width) {
+    showGeneralDialog(
+      context: context,
+      barrierLabel: 'Dialog',
+      transitionDuration: const Duration(milliseconds: 20),
+      pageBuilder: (_, __, ___) {
+        return Scaffold(
+          backgroundColor: Colors.white60.withOpacity(0.3),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    height: width > 400
+                        ? MediaQuery.of(context).size.width * 0.62
+                        : MediaQuery.of(context).size.width * 0.52,
+                    width: double.infinity,
+                    color: Colors.transparent,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: width * 0.8,
+                          height: 470,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 15, right: 15),
+                            child: Column(
+                              children: [
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(12),
+                                  width: width * 0.9,
+                                  height: 110,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(7),
+                                    color: Colors.grey.withOpacity(0.1),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "Jake Liam:",
+                                            style: utils.smallTextStyle(),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 5, vertical: 3),
+                                            decoration: BoxDecoration(
+                                              color: Colors.orange
+                                                  .withOpacity(0.4),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Text(
+                                              "Wed 12:22 AM",
+                                              style: utils.extraSmallTextStyle(
+                                                  color: Colors.orange),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        "The email found you well \n I'm wondering about... \n \nBest Regards,",
+                                        style: utils.smallTextStyle(),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(12),
+                                  width: width * 0.9,
+                                  height: 110,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(7),
+                                    color: Colors.grey.withOpacity(0.1),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "Merchant",
+                                            style: utils.smallTextStyle(),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 5, vertical: 3),
+                                            decoration: BoxDecoration(
+                                              color: Colors.orange
+                                                  .withOpacity(0.4),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Text(
+                                              "Wed 12:22 AM",
+                                              style: utils.extraSmallTextStyle(
+                                                  color: Colors.orange),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        "Thanks for your email. \nyour booking is... \n \nBest Regards,",
+                                        style: utils.smallTextStyle(),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(12),
+                                  width: width * 0.9,
+                                  height: 110,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(7),
+                                    color: Colors.grey.withOpacity(0.1),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "Jake Liam:",
+                                            style: utils.smallTextStyle(),
+                                          ),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 5, vertical: 3),
+                                            decoration: BoxDecoration(
+                                              color: Colors.orange
+                                                  .withOpacity(0.4),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Text(
+                                              "Wed 12:22 AM",
+                                              style: utils.extraSmallTextStyle(
+                                                  color: Colors.orange),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        "Got it.\n \n \nCheers,",
+                                        style: utils.smallTextStyle(),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    utils.bigButton(
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                        },
+                                        containerColor: yellowColor,
+                                        text: "Delete",
+                                        width: width * 0.2,
+                                        textColor: greyColor,
+                                        borderRadius: 4.0,
+                                        fontSize: 13,
+                                        shadowColors: Colors.white),
+                                    utils.bigButton(
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                        },
+                                        containerColor: yellowColor,
+                                        text: "Reply",
+                                        width: width * 0.2,
+                                        textColor: greyColor,
+                                        borderRadius: 4.0,
+                                        fontSize: 13,
+                                        shadowColors: Colors.white)
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.3,
+                    width: double.infinity,
+                    color: Colors.transparent,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

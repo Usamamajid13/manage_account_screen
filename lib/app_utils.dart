@@ -10,6 +10,14 @@ class AppUtils {
     );
   }
 
+  extraSmallTextStyle({color}) {
+    return TextStyle(
+      color: color,
+      fontSize: 8,
+      fontWeight: FontWeight.normal,
+    );
+  }
+
   mediumTextStyle({color}) {
     return TextStyle(
       color: color,
@@ -242,51 +250,54 @@ class AppUtils {
     );
   }
 
-  emailListWidget({context, name, email, time}) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: 30,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.2,
-            child: Center(
-              child: Text(
-                name,
-                style: mediumTextStyle(
-                  color: brownColor,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.5,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  email,
+  emailListWidget({context, name, email, time, onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: 30,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.2,
+              child: Center(
+                child: Text(
+                  name,
                   style: mediumTextStyle(
-                    color: maroonColor,
+                    color: brownColor,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.2,
-            child: Center(
-              child: Text(
-                time,
-                style: mediumTextStyle(
-                  color: Colors.grey,
                 ),
               ),
             ),
-          ),
-        ],
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    email,
+                    style: mediumTextStyle(
+                      color: maroonColor,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.2,
+              child: Center(
+                child: Text(
+                  time,
+                  style: mediumTextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

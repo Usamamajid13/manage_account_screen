@@ -16,7 +16,6 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
   bool selected2 = false;
   bool selected3 = false;
   DateTime? _selectedDay1;
-  DateTime? _focusedDay1;
   int bigButton = -1;
   var utils = AppUtils();
   @override
@@ -101,7 +100,7 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
                               width: 2),
                           color: lighPurpleColor),
                       child: Container(
-                        padding: EdgeInsets.only(top: 40),
+                        padding: const EdgeInsets.only(top: 40),
                         child: const Text(
                           "Waiting",
                           style: TextStyle(color: Colors.white, fontSize: 13),
@@ -127,7 +126,7 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
                               width: 2),
                           color: lighBlueColor),
                       child: Container(
-                        padding: EdgeInsets.only(top: 40),
+                        padding: const EdgeInsets.only(top: 40),
                         child: const Text(
                           "Confirm",
                           style: TextStyle(color: Colors.white, fontSize: 13),
@@ -153,7 +152,7 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
                               width: 2),
                           color: lighGreenColor),
                       child: Container(
-                        padding: EdgeInsets.only(top: 40),
+                        padding: const EdgeInsets.only(top: 40),
                         child: const Text(
                           "Complete",
                           style: TextStyle(color: Colors.white, fontSize: 12.2),
@@ -179,7 +178,7 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
                               width: 2),
                           color: lighBrownColor),
                       child: Container(
-                        padding: EdgeInsets.only(top: 40),
+                        padding: const EdgeInsets.only(top: 40),
                         child: const Text(
                           "Empty",
                           style: TextStyle(color: Colors.white, fontSize: 13),
@@ -256,10 +255,6 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
                     setState(() {});
 
                     _selectedDay1 = selectedDay1;
-                    _focusedDay1 = focusedDay1;
-
-                    print(_selectedDay1);
-                    print(_focusedDay1);
                   },
                   calendarBuilders: CalendarBuilders(
                     selectedBuilder: (context, date, events) => Container(
@@ -396,8 +391,6 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
                           height: 15,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color:
-                                  selected2 ? Colors.black : Colors.transparent,
                               border: Border.all(
                                 color: Colors.grey,
                               )),
@@ -406,6 +399,9 @@ class _EditBookingScreenState extends State<EditBookingScreen> {
                               width: 7,
                               height: 7,
                               decoration: BoxDecoration(
+                                  color: selected2
+                                      ? Colors.black
+                                      : Colors.transparent,
                                   shape: BoxShape.circle,
                                   border: Border.all(
                                     color: Colors.grey,

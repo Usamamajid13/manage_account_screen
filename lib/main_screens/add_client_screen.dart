@@ -16,7 +16,6 @@ class _AddClientScreenState extends State<AddClientScreen> {
   bool selected2 = false;
   bool selected3 = false;
   DateTime? _selectedDay1;
-  DateTime? _focusedDay1;
   var utils = AppUtils();
   @override
   Widget build(BuildContext context) {
@@ -157,10 +156,6 @@ class _AddClientScreenState extends State<AddClientScreen> {
                     setState(() {});
 
                     _selectedDay1 = selectedDay1;
-                    _focusedDay1 = focusedDay1;
-
-                    print(_selectedDay1);
-                    print(_focusedDay1);
                   },
                   calendarBuilders: CalendarBuilders(
                     selectedBuilder: (context, date, events) => Container(
