@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:manage_account_screen/Authentication/sign_up_screen.dart';
-import 'package:manage_account_screen/main_screens/manage_profile_screen.dart';
 
 import 'Authentication/sign_in_screen.dart';
 import 'constants.dart';
-import 'main_screens/add_client_screen.dart';
-import 'main_screens/bottom_navigation_bar_screen.dart';
 import 'Authentication/splash_screen.dart';
-import 'main_screens/edit_booking_screen.dart';
+import 'main_screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
